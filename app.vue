@@ -11,22 +11,22 @@
         <button class="header__burger">
           <img src="~/assets/icons/burger.svg" alt="" />
         </button>
-        <router-link to="/">
+        <a href="/">
           <img class="header__logo" src="~/assets/logo.svg" alt="FLUTON" />
-        </router-link>
+        </a>
         <nav class="header__nav">
-          <router-link to="/shop">
+          <a href="/shop">
             <span>Shop</span>
             <img src="~/assets/icons/arrow.svg" alt="" />
-          </router-link>
-          <router-link to="/about">
+          </a>
+          <a href="/about">
             <span>About</span>
             <img src="~/assets/icons/arrow.svg" alt="" />
-          </router-link>
-          <router-link to="/learn">
+          </a>
+          <a href="/learn">
             <span>Learn</span>
             <img src="~/assets/icons/arrow.svg" alt="" />
-          </router-link>
+          </a>
         </nav>
         <button class="header__quiz">take your quiz</button>
         <button class="header__cart">
