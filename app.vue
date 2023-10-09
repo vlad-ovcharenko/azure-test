@@ -1,7 +1,79 @@
 <template>
-  <div>
-    <nuxt-link to="/">home</nuxt-link>
-    <nuxt-link to="/about">about</nuxt-link>
-    <NuxtPage />
-  </div>
+  <header class="header">
+    <section class="header__line">
+      <div class="gb-container">
+        <span>FREE SHIPPING OVER $60</span>
+        <span>SHOP NOW</span>
+      </div>
+    </section>
+    <div class="header__content">
+      <div class="header__container">
+        <button class="header__burger">
+          <img src="~/assets/icons/burger.svg" alt="" />
+        </button>
+        <router-link to="/">
+          <img class="header__logo" src="~/assets/logo.svg" alt="FLUTON" />
+        </router-link>
+        <nav class="header__nav">
+          <router-link to="/shop">
+            <span>Shop</span>
+            <img src="~/assets/icons/arrow.svg" alt="" />
+          </router-link>
+          <router-link to="/about">
+            <span>About</span>
+            <img src="~/assets/icons/arrow.svg" alt="" />
+          </router-link>
+          <router-link to="/learn">
+            <span>Learn</span>
+            <img src="~/assets/icons/arrow.svg" alt="" />
+          </router-link>
+        </nav>
+        <button class="header__quiz">take your quiz</button>
+        <button class="header__cart">
+          <img src="~/assets/icons/cart.svg" alt="cart" />
+        </button>
+      </div>
+    </div>
+  </header>
+  <NuxtPage />
+  <footer class="footer">
+    <div class="footer__item">
+      <div>
+        <img src="~/assets/images/fingerprint.png" alt="" />
+      </div>
+      <p>
+        Custom molding <br />
+        technology
+      </p>
+    </div>
+    <div class="footer__item">
+      <div>
+        <img src="~/assets/images/cloud.png" alt="" />
+      </div>
+      <p>
+        Supreme <br />
+        comfort
+      </p>
+    </div>
+    <div class="footer__item">
+      <div>
+        <img src="~/assets/images/doctor.png" alt="" />
+      </div>
+      <p>
+        Designed by <br />
+        doctors
+      </p>
+    </div>
+    <div class="footer__item">
+      <div>
+        <img src="~/assets/images/earth.png" alt="" />
+      </div>
+      <p>
+        Certified carbon <br />
+        negative
+      </p>
+    </div>
+  </footer>
 </template>
+<script setup lang="ts">
+</script>

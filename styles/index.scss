@@ -1,0 +1,19 @@
+@import "reset.css";
+@import "variables";
+@import "footer";
+@import "header";
+
+body {
+  scroll-behavior: smooth;
+  color: $c-main;
+  font-family: sans-serif;
+}
+.gb-page-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  font-size: 100px;
+  text-transform: capitalize;
+}

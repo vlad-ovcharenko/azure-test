@@ -1,0 +1,94 @@
+@import "variables";
+.header {
+  &__line {
+    height: 30px;
+    background-color: $c-main;
+    color: $c-accent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    div {
+      @include max-width();
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  &__content {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px $c-main;
+  }
+  &__container {
+    @include max-width();
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__burger {
+    display: none;
+    height: 32px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0 20px;
+      font-size: 28px;
+      img {
+        height: 15px;
+      }
+    }
+  }
+  &__quiz {
+    height: 55px;
+    padding: 0 25px;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: $c-accent;
+    margin-right: 55px;
+  }
+  &__cart {
+    height: 25px;
+    img {
+      height: 100%;
+    }
+  }
+  @include laptop {
+    &__nav {
+      gap: 5px;
+      a {
+        font-size: 20px;
+        gap: 7px;
+        padding: 0 10px;
+        img {
+          height: 10px;
+        }
+      }
+    }
+    &__quiz {
+      display: none;
+    }
+  }
+  @include tablet {
+    &__container {
+      justify-content: space-between;
+    }
+    &__nav {
+      display: none;
+    }
+    &__burger {
+      display: block;
+    }
+  }
+}
