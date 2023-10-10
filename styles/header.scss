@@ -51,6 +51,7 @@
     }
   }
   &__quiz {
+    @include hover();
     height: 55px;
     padding: 0 25px;
     font-size: 18px;

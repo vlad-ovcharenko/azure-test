@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue";
-import StarsRating from "@/components/StarsRating.vue";
-import DynamicPrice from "@/components/DynamicPrice.vue";
-import ValuesList from "@/components/ValuesList.vue";
-import SliderImages from "@/components/SliderImages.vue";
-import p1 from '@/assets/images/product/1.png'
-import p2 from '@/assets/images/product/2.png'
-import p3 from '@/assets/images/product/3.png'
-import p4 from '@/assets/images/product/4.png'
+import StarsRating from "~/components/StarsRating.vue";
+import DynamicPrice from "~/components/DynamicPrice.vue";
+import ValuesList from "~/components/ValuesList.vue";
+import SliderImages from "~/components/SliderImages.vue";
+import p1 from "~/assets/images/product/1.png";
+import p2 from "~/assets/images/product/2.png";
+import p3 from "~/assets/images/product/3.png";
+import p4 from "~/assets/images/product/4.png";
 const images = [p1, p2, p3, p4];
 const sizesMan = [7, 8, 9, 10, 11, 12, 13, 14, 15];
 const sizesWoman = [5, 6, 7, 8, 9, 10, 11, 12];
@@ -32,8 +32,8 @@ function toggleGender() {
   }
   state.isGenderMen = !state.isGenderMen;
   state.currentSize = state.isGenderMen
-      ? state.prevManSize
-      : state.prevWomanSize;
+    ? state.prevManSize
+    : state.prevWomanSize;
 }
 </script>
 
@@ -54,22 +54,22 @@ function toggleGender() {
         All day comfort and support unique to your body. Great for:
       </p>
       <values-list
-          :included="['Foot pain', 'Knee pain']"
-          :excluded="['Back pain', 'Alignment']"
+        :included="['Foot pain', 'Knee pain']"
+        :excluded="['Back pain', 'Alignment']"
       />
       <p class="product__label">Width:</p>
       <div class="product__bool-buttons">
         <button
-            class="product__btn"
-            :class="{ 'product__btn--active': state.isWidthStandard }"
-            @click="state.isWidthStandard = true"
+          class="product__btn"
+          :class="{ 'product__btn--active': state.isWidthStandard }"
+          @click="state.isWidthStandard = true"
         >
           Standard
         </button>
         <button
-            class="product__btn"
-            :class="{ 'product__btn--active': !state.isWidthStandard }"
-            @click="state.isWidthStandard = false"
+          class="product__btn"
+          :class="{ 'product__btn--active': !state.isWidthStandard }"
+          @click="state.isWidthStandard = false"
         >
           Narrow
         </button>
@@ -77,16 +77,16 @@ function toggleGender() {
       <p class="product__label">Gender:</p>
       <div class="product__bool-buttons">
         <button
-            class="product__btn"
-            :class="{ 'product__btn--active': state.isGenderMen }"
-            @click="toggleGender"
+          class="product__btn"
+          :class="{ 'product__btn--active': state.isGenderMen }"
+          @click="toggleGender"
         >
           Men
         </button>
         <button
-            class="product__btn"
-            :class="{ 'product__btn--active': !state.isGenderMen }"
-            @click="toggleGender"
+          class="product__btn"
+          :class="{ 'product__btn--active': !state.isGenderMen }"
+          @click="toggleGender"
         >
           Women
         </button>
@@ -97,17 +97,17 @@ function toggleGender() {
       </p>
       <div class="product__sizes">
         <button
-            class="product__btn"
-            v-for="size in currentSizeGender"
-            :class="{ 'product__btn--active': size === state.currentSize }"
-            @click="state.currentSize = size"
+          class="product__btn"
+          v-for="size in currentSizeGender"
+          :class="{ 'product__btn--active': size === state.currentSize }"
+          @click="state.currentSize = size"
         >
           {{ size }}
         </button>
       </div>
       <button class="product__add"><span>Add to Cart</span> $48</button>
       <div class="product__comfort">
-        <img src="~/assets/images/book.png" alt="" />
+        <img src="~/assets/images/values/book.png" alt="" />
         90-day comfort guarantee
       </div>
     </div>
@@ -168,6 +168,7 @@ function toggleGender() {
     }
   }
   &__btn {
+    @include hover();
     border: solid 1px $c-main;
     border-radius: 10px;
     font-size: 18px;
@@ -194,6 +195,7 @@ function toggleGender() {
     justify-content: center;
   }
   &__add {
+    @include hover();
     margin-top: 20px;
     display: block;
     width: 100%;

@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: true },
   nitro: {
-    preset: 'azure'
+    preset: "azure",
   },
-  css: ['~/styles/index.scss']
-})
+  css: ["~/styles/index.scss"],
+});

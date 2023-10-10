@@ -39,7 +39,7 @@
   <footer class="footer">
     <div class="footer__item">
       <div>
-        <img src="~/assets/images/fingerprint.png" alt="" />
+        <img src="~/assets/images/values/fingerprint.png" alt="" />
       </div>
       <p>
         Custom molding <br />
@@ -48,7 +48,7 @@
     </div>
     <div class="footer__item">
       <div>
-        <img src="~/assets/images/cloud.png" alt="" />
+        <img src="~/assets/images/values/cloud.png" alt="" />
       </div>
       <p>
         Supreme <br />
@@ -57,7 +57,7 @@
     </div>
     <div class="footer__item">
       <div>
-        <img src="~/assets/images/doctor.png" alt="" />
+        <img src="~/assets/images/values/doctor.png" alt="" />
       </div>
       <p>
         Designed by <br />
@@ -66,7 +66,7 @@
     </div>
     <div class="footer__item">
       <div>
-        <img src="~/assets/images/earth.png" alt="" />
+        <img src="~/assets/images/values/earth.png" alt="" />
       </div>
       <p>
         Certified carbon <br />
@@ -75,5 +75,3 @@
     </div>
   </footer>
 </template>
-<script setup lang="ts">
-</script>

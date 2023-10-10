@@ -30,10 +30,12 @@ const props = defineProps<{
   value: number;
   disabled?: boolean;
 }>();
-const state = reactive(<{
-  value: number,
-  tempValue: number | null
-}>{
+const state = reactive(<
+  {
+    value: number;
+    tempValue: number | null;
+  }
+>{
   value: props.value,
   tempValue: null,
 });

@@ -27,7 +27,7 @@ const props = defineProps<{
   images: string[];
 }>();
 
-const slider = ref<HTMLInputElement | null>(null)
+const slider = ref<HTMLInputElement | null>(null);
 const state = reactive({
   currentSliderIndex: 0,
 });
