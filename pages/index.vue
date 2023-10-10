@@ -131,8 +131,8 @@ function toggleGender() {
     grid-row-gap: 47px;
     img {
       border-radius: 20px;
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
     }
   }
