@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { computed, reactive } from "vue";
-import StarsRating from "~/components/StarsRating.vue";
-import DynamicPrice from "~/components/DynamicPrice.vue";
-import ValuesList from "~/components/ValuesList.vue";
-import SliderImages from "~/components/SliderImages.vue";
-import p1 from "~/assets/images/product/1.png";
-import p2 from "~/assets/images/product/2.png";
-import p3 from "~/assets/images/product/3.png";
-import p4 from "~/assets/images/product/4.png";
-const images = [p1, p2, p3, p4];
-const sizesMan = [7, 8, 9, 10, 11, 12, 13, 14, 15];
-const sizesWoman = [5, 6, 7, 8, 9, 10, 11, 12];
+import {computed, reactive} from 'vue'
+import StarsRating from '~/components/StarsRating.vue'
+import DynamicPrice from '~/components/DynamicPrice.vue'
+import ValuesList from '~/components/ValuesList.vue'
+import SliderImages from '~/components/SliderImages.vue'
+const images = [
+  '/images/product/1.png',
+  '/images/product/2.png',
+  '/images/product/3.png',
+  '/images/product/4.png',
+]
+const sizesMan = [7, 8, 9, 10, 11, 12, 13, 14, 15]
+const sizesWoman = [5, 6, 7, 8, 9, 10, 11, 12]
 
 const state = reactive({
   isGenderMen: true,
@@ -18,22 +19,20 @@ const state = reactive({
   isWidthStandard: true,
   prevWomanSize: 7,
   prevManSize: 10,
-});
+})
 
 const currentSizeGender = computed(() => {
-  return state.isGenderMen ? sizesMan : sizesWoman;
-});
+  return state.isGenderMen ? sizesMan : sizesWoman
+})
 
 function toggleGender() {
   if (state.isGenderMen) {
-    state.prevManSize = state.currentSize;
+    state.prevManSize = state.currentSize
   } else {
-    state.prevWomanSize = state.currentSize;
+    state.prevWomanSize = state.currentSize
   }
-  state.isGenderMen = !state.isGenderMen;
-  state.currentSize = state.isGenderMen
-    ? state.prevManSize
-    : state.prevWomanSize;
+  state.isGenderMen = !state.isGenderMen
+  state.currentSize = state.isGenderMen ? state.prevManSize : state.prevWomanSize
 }
 </script>
 
@@ -53,22 +52,19 @@ function toggleGender() {
       <p class="product__description">
         All day comfort and support unique to your body. Great for:
       </p>
-      <values-list
-        :included="['Foot pain', 'Knee pain']"
-        :excluded="['Back pain', 'Alignment']"
-      />
+      <values-list :included="['Foot pain', 'Knee pain']" :excluded="['Back pain', 'Alignment']" />
       <p class="product__label">Width:</p>
       <div class="product__bool-buttons">
         <button
           class="product__btn"
-          :class="{ 'product__btn--active': state.isWidthStandard }"
+          :class="{'product__btn--active': state.isWidthStandard}"
           @click="state.isWidthStandard = true"
         >
           Standard
         </button>
         <button
           class="product__btn"
-          :class="{ 'product__btn--active': !state.isWidthStandard }"
+          :class="{'product__btn--active': !state.isWidthStandard}"
           @click="state.isWidthStandard = false"
         >
           Narrow
@@ -78,14 +74,14 @@ function toggleGender() {
       <div class="product__bool-buttons">
         <button
           class="product__btn"
-          :class="{ 'product__btn--active': state.isGenderMen }"
+          :class="{'product__btn--active': state.isGenderMen}"
           @click="toggleGender"
         >
           Men
         </button>
         <button
           class="product__btn"
-          :class="{ 'product__btn--active': !state.isGenderMen }"
+          :class="{'product__btn--active': !state.isGenderMen}"
           @click="toggleGender"
         >
           Women
@@ -99,7 +95,7 @@ function toggleGender() {
         <button
           class="product__btn"
           v-for="size in currentSizeGender"
-          :class="{ 'product__btn--active': size === state.currentSize }"
+          :class="{'product__btn--active': size === state.currentSize}"
           @click="state.currentSize = size"
         >
           {{ size }}
@@ -115,7 +111,7 @@ function toggleGender() {
 </template>
 
 <style lang="scss">
-@import "styles/variables";
+@import 'styles/variables';
 .product {
   @include max-width();
   margin-top: 55px;

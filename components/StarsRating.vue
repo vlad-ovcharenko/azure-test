@@ -12,58 +12,53 @@
       @mouseover="starOver(rating)"
       @mouseout="starOut"
     >
-      <input
-        class="stars__checkbox"
-        type="radio"
-        :value="rating"
-        :disabled="props.disabled"
-      />★
+      <input class="stars__checkbox" type="radio" :value="rating" :disabled="props.disabled" />★
     </label>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
-const maxRating = 5;
+import {reactive} from 'vue'
+const maxRating = 5
 
 const props = defineProps<{
-  value: number;
-  disabled?: boolean;
-}>();
+  value: number
+  disabled?: boolean
+}>()
 const state = reactive(<
   {
-    value: number;
-    tempValue: number | null;
+    value: number
+    tempValue: number | null
   }
 >{
   value: props.value,
   tempValue: null,
-});
+})
 function getSelectedStatus(rating: number) {
   if (state.tempValue) {
-    return state.tempValue >= rating;
+    return state.tempValue >= rating
   }
-  return state.value >= rating;
+  return state.value >= rating
 }
 function setRating(rating: number) {
   if (!props.disabled) {
-    state.value = rating;
+    state.value = rating
   }
 }
 function starOver(rating: number) {
   if (!props.disabled) {
-    state.tempValue = rating;
+    state.tempValue = rating
   }
 }
 function starOut() {
   if (!props.disabled) {
-    state.tempValue = null;
+    state.tempValue = null
   }
 }
 </script>
 
 <style lang="scss">
-@import "styles/variables";
+@import 'styles/variables';
 .stars {
   display: flex;
   &__star {

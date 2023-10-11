@@ -8,18 +8,18 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  newPrice: number;
-  oldPrice?: number;
-}>();
+  newPrice: number
+  oldPrice?: number
+}>()
 function getPercent() {
-  const saving = props.oldPrice! - props.newPrice;
-  const savingPercent = (saving / props.oldPrice!) * 100;
-  return savingPercent.toFixed(2);
+  const saving = props.oldPrice! - props.newPrice
+  const savingPercent = (saving / props.oldPrice!) * 100
+  return savingPercent.toFixed(2)
 }
 </script>
 
 <style lang="scss">
-@import "styles/variables";
+@import 'styles/variables';
 .price {
   display: flex;
   align-items: center;

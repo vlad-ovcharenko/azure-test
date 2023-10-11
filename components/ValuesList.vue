@@ -13,13 +13,13 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  included: string[];
-  excluded: string[];
-}>();
+  included: string[]
+  excluded: string[]
+}>()
 </script>
 
 <style lang="scss">
-@import "styles/variables";
+@import 'styles/variables';
 .values {
   display: grid;
   grid-template-columns: auto auto;

@@ -15,42 +15,42 @@
         v-for="(img, index) in props.images"
         :key="img"
         @click="toggleSlide(index)"
-        :class="{ active: index === state.currentSliderIndex }"
+        :class="{active: index === state.currentSliderIndex}"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, ref } from "vue";
+import {onMounted, reactive, ref} from 'vue'
 const props = defineProps<{
-  images: string[];
-}>();
+  images: string[]
+}>()
 
-const slider = ref<HTMLInputElement | null>(null);
+const slider = ref<HTMLInputElement | null>(null)
 const state = reactive({
   currentSliderIndex: 0,
-});
+})
 onMounted(() => {
-  console.log(slider);
-});
+  console.log(slider)
+})
 
 function toggleSlide(index: number) {
-  const container = slider.value!.children[0];
-  const slideWidth = document.getElementById("slide-0")!.offsetWidth;
+  const container = slider.value!.children[0]
+  const slideWidth = document.getElementById('slide-0')!.offsetWidth
   // 10 is 10px gap between slides
-  const scroll = !index ? 0 : slideWidth * index + 10 * index;
+  const scroll = !index ? 0 : slideWidth * index + 10 * index
   container.scrollTo({
     left: scroll,
-    behavior: "smooth",
-  });
+    behavior: 'smooth',
+  })
 
-  state.currentSliderIndex = index;
+  state.currentSliderIndex = index
 }
 </script>
 
 <style lang="scss">
-@import "styles/variables";
+@import 'styles/variables';
 
 .slider {
   &__slides {
