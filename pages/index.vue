@@ -48,9 +48,10 @@ function toggleGender(isMan: boolean) {
         <a href="#">150 Reviews</a>
       </div>
       <DynamicPrice old-price="60" new-price="48" />
-      <p class="product__description">
-        All day comfort and support unique to your body. Great for:
-      </p>
+      <div
+        class="product__description"
+        v-html="'<p>All day comfort and support unique to your body. Great for:</p>'"
+      />
       <values-list :included="['Foot pain', 'Knee pain']" :excluded="['Back pain', 'Alignment']" />
       <p class="product__label">Width:</p>
       <div class="product__bool-buttons">
