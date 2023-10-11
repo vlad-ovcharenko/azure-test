@@ -4,12 +4,11 @@ import StarsRating from '~/components/StarsRating.vue'
 import DynamicPrice from '~/components/DynamicPrice.vue'
 import ValuesList from '~/components/ValuesList.vue'
 import SliderImages from '~/components/SliderImages.vue'
-const images = [
-  '/images/product/1.png',
-  '/images/product/2.png',
-  '/images/product/3.png',
-  '/images/product/4.png',
-]
+import p1 from '~/assets/images/product/1.png'
+import p2 from '~/assets/images/product/2.png'
+import p3 from '~/assets/images/product/3.png'
+import p4 from '~/assets/images/product/4.png'
+const images = [p1, p2, p3, p4]
 const sizesMan = [7, 8, 9, 10, 11, 12, 13, 14, 15]
 const sizesWoman = [5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -25,14 +24,14 @@ const currentSizeGender = computed(() => {
   return state.isGenderMen ? sizesMan : sizesWoman
 })
 
-function toggleGender() {
-  if (state.isGenderMen) {
-    state.prevManSize = state.currentSize
-  } else {
+function toggleGender(isMan: boolean) {
+  if (isMan) {
     state.prevWomanSize = state.currentSize
+  } else {
+    state.prevManSize = state.currentSize
   }
-  state.isGenderMen = !state.isGenderMen
-  state.currentSize = state.isGenderMen ? state.prevManSize : state.prevWomanSize
+  state.isGenderMen = isMan
+  state.currentSize = isMan ? state.prevManSize : state.prevWomanSize
 }
 </script>
 
@@ -75,14 +74,14 @@ function toggleGender() {
         <button
           class="product__btn"
           :class="{'product__btn--active': state.isGenderMen}"
-          @click="toggleGender"
+          @click="toggleGender(true)"
         >
           Men
         </button>
         <button
           class="product__btn"
           :class="{'product__btn--active': !state.isGenderMen}"
-          @click="toggleGender"
+          @click="toggleGender(false)"
         >
           Women
         </button>
