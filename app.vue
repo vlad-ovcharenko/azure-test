@@ -41,37 +41,32 @@
       <div>
         <img src="~/assets/images/values/fingerprint.png" alt="" />
       </div>
-      <p>
-        Custom molding <br />
-        technology
-      </p>
+      <p>Custom molding <br />technology</p>
     </div>
     <div class="footer__item">
       <div>
         <img src="~/assets/images/values/cloud.png" alt="" />
       </div>
-      <p>
-        Supreme <br />
-        comfort
-      </p>
+      <p>Supreme <br />comfort</p>
     </div>
     <div class="footer__item">
       <div>
         <img src="~/assets/images/values/doctor.png" alt="" />
       </div>
-      <p>
-        Designed by <br />
-        doctors
-      </p>
+      <p>Designed by <br />doctors</p>
     </div>
     <div class="footer__item">
       <div>
         <img src="~/assets/images/values/earth.png" alt="" />
       </div>
-      <p>
-        Certified carbon <br />
-        negative
-      </p>
+      <p>Certified carbon <br />negative</p>
+    </div>
+    <div class="footer__item footer__item--book">
+      <div>
+        <img src="~/assets/images/values/book.png" alt="" />
+      </div>
+      <p>90-day comfort<br />guarantee</p>
     </div>
   </footer>
 </template>
+<script setup lang="ts"></script>
